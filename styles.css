@@ -804,10 +804,11 @@ input[type="number"]:focus,input[type="text"]:focus{
     gap:14px;
   }
 
+  /* Mantém a ordem original do desktop */
   .result-card{
     position:relative;
     top:0;
-    order:-1;
+    order:0; /* garante ordem normal */
   }
 
   .category-list{
@@ -836,8 +837,9 @@ input[type="number"]:focus,input[type="text"]:focus{
   }
 
   input{
-    font-size:16px; /* evita zoom automático no iPhone */
+    font-size:16px;
   }
 
 }
+
 
