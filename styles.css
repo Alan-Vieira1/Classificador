@@ -790,6 +790,11 @@ input[type="number"]:focus,input[type="text"]:focus{
 @media (max-width:720px){
 
   body{
+  display:block;
+  padding:12px;
+}
+
+  body{
     padding:12px;
     align-items:flex-start;
   }
