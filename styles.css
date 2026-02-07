@@ -562,7 +562,6 @@ input[type="number"]:focus,input[type="text"]:focus{
   .result-card{
     grid-column:1;
     grid-row:auto;
-    order:3;
     position:relative;
     top:0;
   }
@@ -790,41 +789,83 @@ input[type="number"]:focus,input[type="text"]:focus{
 
 @media (max-width:720px){
 
-  .main-grid{
-    display:block; /* remove completamente o grid no mobile */
+  body{
+    padding:12px;
+    align-items:flex-start;
   }
 
-  .result-card{
-    position:relative;
-    grid-column:auto;
-    grid-row:auto;
+  .main-grid{
+    display:block;
+  }
+
+  .panel{
+    padding:12px;
+    border-radius:10px;
+  }
+
+  .site-header{
+    margin-bottom:10px;
+  }
+
+  .site-header h1{
+    font-size:1.3rem;
+    margin-bottom:8px;
+  }
+
+  .project-info input{
+    min-width:100%;
   }
 
   .category-list{
     flex-direction:column;
-    gap:12px;
+    gap:10px;
   }
 
   .cat-block{
     width:100%;
-    flex:1 1 100%;
+    padding:10px;
   }
 
   .measurement-list{
     flex-direction:column;
-    gap:14px;
+    gap:12px;
   }
 
   .measure-block{
     width:100%;
-    flex:1 1 100%;
+    padding:12px;
+  }
+
+  .measure-title{
+    font-size:0.9rem;
+    margin-bottom:4px;
+  }
+
+  .actions{
+    gap:8px;
   }
 
   .btn{
     width:100%;
+    padding:8px 10px;
+    font-size:0.85rem;
+  }
+
+  .values-list li{
+    font-size:0.8rem;
+    padding:4px 6px;
+  }
+
+  .result-card{
+    margin-top:10px;
+  }
+
+  input{
+    font-size:16px; /* evita zoom automático */
   }
 
 }
+
 
 
 
