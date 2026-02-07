@@ -790,25 +790,14 @@ input[type="number"]:focus,input[type="text"]:focus{
 
 @media (max-width:720px){
 
-  body{
-    padding:14px;
-    align-items:flex-start;
-  }
-
-  .container{
-    width:100%;
-  }
-
   .main-grid{
-    grid-template-columns:1fr;
-    gap:14px;
+    display:block; /* remove completamente o grid no mobile */
   }
 
-  /* Mantém a ordem original do desktop */
   .result-card{
     position:relative;
-    top:0;
-    order:0; /* garante ordem normal */
+    grid-column:auto;
+    grid-row:auto;
   }
 
   .category-list{
@@ -823,7 +812,6 @@ input[type="number"]:focus,input[type="text"]:focus{
 
   .measurement-list{
     flex-direction:column;
-    flex-wrap:wrap;
     gap:14px;
   }
 
@@ -836,10 +824,7 @@ input[type="number"]:focus,input[type="text"]:focus{
     width:100%;
   }
 
-  input{
-    font-size:16px;
-  }
-
 }
+
 
 
