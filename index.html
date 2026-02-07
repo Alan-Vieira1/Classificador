@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classificar ovos</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="site-header">
+        <h1>Classificar ovos</h1>
+        <div class="project-info">
+          <label>
+            Número do Projeto:
+            <input type="text" id="projectNumber" placeholder="Ex: PROJ-2024-001" />
+          </label>
+        </div>
+      </header>
+
+      <main class="main-grid">
+        <section class="panel config">
+          <h3>Limites</h3>
+          <form id="configForm" onsubmit="return false;">
+            <div class="category-list">
+              <div class="cat-block">
+                <div class="left">
+                  <div class="cat-item red"><span class="dot"></span><span class="cat-name">Ovo de codorna</span></div>
+                </div>
+                <div class="right">
+                  <label>Min (kg)
+                    <input type="number" id="cat0_min" step="0.001" placeholder="0.000" />
+                  </label>
+                  <label>Max (kg)
+                    <input type="number" id="cat0_max" step="0.001" placeholder="0.000" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="cat-block">
+                <div class="left">
+                  <div class="cat-item blue"><span class="dot"></span><span class="cat-name">Ovo de galinha</span></div>
+                </div>
+                <div class="right">
+                  <label>Min (kg)
+                    <input type="number" id="cat1_min" step="0.001" placeholder="0.000" />
+                  </label>
+                  <label>Max (kg)
+                    <input type="number" id="cat1_max" step="0.001" placeholder="0.000" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="cat-block">
+                <div class="left">
+                  <div class="cat-item yellow"><span class="dot"></span><span class="cat-name">Laranja</span></div>
+                </div>
+                <div class="right">
+                  <label>Min (kg)
+                    <input type="number" id="cat2_min" step="0.001" placeholder="0.000" />
+                  </label>
+                  <label>Max (kg)
+                    <input type="number" id="cat2_max" step="0.001" placeholder="0.000" />
+                  </label>
+                </div>
+              </div>
+
+              <div class="cat-block">
+                <div class="left">
+                  <div class="cat-item green"><span class="dot"></span><span class="cat-name">Coco</span></div>
+                </div>
+                <div class="right">
+                  <label>Min (kg)
+                    <input type="number" id="cat3_min" step="0.001" placeholder="0.000" />
+                  </label>
+                  <label>Max (kg)
+                    <input type="number" id="cat3_max" step="0.001" placeholder="0.000" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel control">
+          <h3>Adicione os pesos</h3>
+          <div class="measurement-list">
+            <div class="measure-block" data-idx="0">
+              <h4 class="measure-title">Testemunha 1</h4>
+              <label>Peso (kg)
+                <input type="number" id="measureInput0" step="0.001" placeholder="0.000" />
+              </label>
+              <div class="actions">
+                <button id="addValueBtn0" class="btn">Adicionar valor</button>
+                <button id="clearValuesBtn0" class="btn ghost">Limpar valores</button>
+              </div>
+              <div class="values-area">
+                <ul id="valuesList0" class="values-list"></ul>
+                <div id="avgText0" class="muted">Média: —</div>
+              </div>
+              <div class="actions" style="margin-top:8px">
+                <button id="classifyBtn0" class="btn primary">Calcular média & Classificar</button>
+              </div>
+            </div>
+
+            <div class="measure-block" data-idx="1">
+              <h4 class="measure-title">Testemunha 2</h4>
+              <label>Peso (kg)
+                <input type="number" id="measureInput1" step="0.001" placeholder="0.000" />
+              </label>
+              <div class="actions">
+                <button id="addValueBtn1" class="btn">Adicionar valor</button>
+                <button id="clearValuesBtn1" class="btn ghost">Limpar valores</button>
+              </div>
+              <div class="values-area">
+                <ul id="valuesList1" class="values-list"></ul>
+                <div id="avgText1" class="muted">Média: —</div>
+              </div>
+              <div class="actions" style="margin-top:8px">
+                <button id="classifyBtn1" class="btn primary">Calcular média & Classificar</button>
+              </div>
+            </div>
+
+            <div class="measure-block" data-idx="2">
+              <h4 class="measure-title">Teste 1</h4>
+              <label>Peso (kg)
+                <input type="number" id="measureInput2" step="0.001" placeholder="0.000" />
+              </label>
+              <div class="actions">
+                <button id="addValueBtn2" class="btn">Adicionar valor</button>
+                <button id="clearValuesBtn2" class="btn ghost">Limpar valores</button>
+              </div>
+              <div class="values-area">
+                <ul id="valuesList2" class="values-list"></ul>
+                <div id="avgText2" class="muted">Média: —</div>
+              </div>
+              <div class="actions" style="margin-top:8px">
+                <button id="classifyBtn2" class="btn primary">Calcular média & Classificar</button>
+              </div>
+            </div>
+
+            <div class="measure-block" data-idx="3">
+              <h4 class="measure-title">Teste 2</h4>
+              <label>Peso (kg)
+                <input type="number" id="measureInput3" step="0.001" placeholder="0.000" />
+              </label>
+              <div class="actions">
+                <button id="addValueBtn3" class="btn">Adicionar valor</button>
+                <button id="clearValuesBtn3" class="btn ghost">Limpar valores</button>
+              </div>
+              <div class="values-area">
+                <ul id="valuesList3" class="values-list"></ul>
+                <div id="avgText3" class="muted">Média: —</div>
+              </div>
+              <div class="actions" style="margin-top:8px">
+                <button id="classifyBtn3" class="btn primary">Calcular média & Classificar</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions" style="margin-top:12px">
+            <button id="saveProjectBtn" class="btn primary" type="button">Salvar Projeto</button>
+            <button id="importProjectBtn" class="btn" type="button">Importar Projeto</button>
+            <input type="file" id="importFileInput" accept=".json" style="display:none" />
+            <button id="resetBtn" class="btn ghost" type="button">Reiniciar pesos</button>
+          </div>
+        </section>
+
+        <section id="result" class="panel result-card">
+          <h3>Resultado</h3>
+          <div id="resultBody">
+            <div class="result-section">
+              <h4 class="result-group-title">Testemunha</h4>
+              <div class="result-item" id="result0">
+                <span class="result-label">Testemunha 1:</span>
+                <span class="result-value">—</span>
+              </div>
+              <div class="result-item" id="result1">
+                <span class="result-label">Testemunha 2:</span>
+                <span class="result-value">—</span>
+              </div>
+              <div class="result-item result-average" id="resultAvgTestemunha">
+                <span class="result-label">Média Testemunha:</span>
+                <span class="result-value">—</span>
+              </div>
+            </div>
+
+            <div class="result-section">
+              <h4 class="result-group-title">Teste</h4>
+              <div class="result-item" id="result2">
+                <span class="result-label">Teste 1:</span>
+                <span class="result-value">—</span>
+              </div>
+              <div class="result-item" id="result3">
+                <span class="result-label">Teste 2:</span>
+                <span class="result-value">—</span>
+              </div>
+              <div class="result-item result-average" id="resultAvgTeste">
+                <span class="result-label">Média Teste:</span>
+                <span class="result-value">—</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- History Modal -->
+      <div id="historyModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Histórico de Projetos</h2>
+            <button id="closeModalBtn" class="close-btn">✕</button>
+          </div>
+          <div class="modal-body">
+            <div id="historyList"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
