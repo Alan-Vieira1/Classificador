@@ -387,9 +387,9 @@ input[type="number"]:focus,input[type="text"]:focus{
 .measurement-list{
   display:flex;
   flex-direction:row;
-  gap:24px;
+  gap:16px;
   justify-content:center;
-  flex-wrap:nowrap;
+  flex-wrap:wrap;
   max-width:980px;
   width:100%;
   margin:0px auto;
@@ -590,6 +590,31 @@ input[type="number"]:focus,input[type="text"]:focus{
   .main-grid{
     grid-template-columns:1fr;
   }
+
+  .panel{
+  padding:14px;
+}
+
+
+  .measure-block{
+  width:100%;
+  flex:1 1 100%;
+}
+
+.measurement-list{
+  flex-direction:column;
+  align-items:stretch;
+}
+
+.category-list{
+  flex-direction:column;
+}
+
+.cat-block{
+  width:100%;
+}
+
+
   
   .cat-block{
     flex-direction:column;
@@ -796,4 +821,8 @@ input[type="number"]:focus,input[type="text"]:focus{
   .modal-content{
     width:95%;
   }
+  body{
+  overflow-x:hidden;
+}
+
 }
