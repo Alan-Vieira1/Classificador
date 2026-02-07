@@ -562,7 +562,6 @@ input[type="number"]:focus,input[type="text"]:focus{
   .result-card{
     grid-column:1;
     grid-row:auto;
-    order:3;
     position:relative;
     top:0;
   }
