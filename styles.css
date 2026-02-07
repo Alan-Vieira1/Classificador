@@ -758,13 +758,19 @@ input[type="number"]:focus,input[type="text"]:focus{
 
 @media (max-width:720px){
 
-  html, body{
-    height:auto;
+    html, body{
+    height:auto !important;
+    min-height:0 !important;
   }
 
   body{
     display:block;
     padding:12px;
+  }
+
+  .result-card{
+    position:relative !important;
+    top:0 !important;
   }
 
   .main-grid{
